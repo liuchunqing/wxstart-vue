@@ -1,0 +1,67 @@
+@import "variables";
+
+.ellipsis(@width){
+	max-width: @width;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.height(@height){
+	height: @height;
+	line-height: @height;
+}
+
+.center(){
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+.circle(@size){
+	width: @size;
+	height: @size;
+	border-radius: 50%;
+}
+
+.blur(@strength) { 
+	
+    filter: url('../images/blur.svg'); /* FireFox, Chrome, Opera */
+    
+    -webkit-filter: blur(@strength); /* Chrome, Opera */
+       -moz-filter: blur(@strength);
+        -ms-filter: blur(@strength);    
+            filter: blur(@strength);
+    
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false); /* IE6~IE9 */
+}
+
+.badge(@color: @color-danger) {  
+    color: #fff;
+    background-color: @color;
+    font-size: 10px;
+    display: inline-block;
+    min-width: 16px;
+    height: 16px;
+    line-height: 16px;
+    border-radius: 16px;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    user-select: none;
+    // font-weight: bold;
+}
+
+.clear-fix(){
+    *zoom: 1;
+    &:before,
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+      overflow: hidden;
+    }
+  }

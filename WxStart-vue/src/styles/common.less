@@ -1,0 +1,163 @@
+@import "variables"; 
+@import "mixins"; 
+html, body{
+	height: 100%;
+}
+
+.vertical-center-modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .ivu-modal{
+        top: 0;
+    }
+}
+
+.tools-footer{
+	text-align: center;
+}
+
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+.clear-fix:after {
+    display: table;
+    content: '';
+    clear: both;
+}
+
+
+.spin-icon-load{
+    animation: ani-spin 1s linear infinite; 
+    & + div{
+        font-size: 14px;
+    }
+}
+
+@keyframes ani-spin {
+    from { transform: rotate(0deg);}
+    50%  { transform: rotate(180deg);}
+    to   { transform: rotate(360deg);}
+}
+
+
+.readStatus{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 5px;
+    margin-top: 1px;
+    &.readed{
+        background-color: @color-success;
+    }
+    &.unread{
+        background-color: @color-error;
+    }
+}
+
+.confirm-tip{
+    font-size: 12px;
+    color: @color-sub;
+}
+
+.el-table--enable-row-hover .el-table__body tr:hover{
+    .fileItem{
+        .fileActions{
+            display: block;
+        }
+    }
+}
+
+.el-button{
+    .fa{
+        margin-right: 5px;
+    }
+}
+
+.headers{
+    height: 30px;
+    line-height: 30px;
+    margin-top: -5px;
+    margin-bottom: 5px;
+    .title{
+        float: left;
+    }
+    .sub-title{
+        float: left;
+        margin-left: 20px;
+        font-size: 13px;
+        color: @color-content;
+    }
+    .tip{
+        font-size: 12px;
+        float: right;
+        margin-top: 2px;
+        height: 26px;
+        line-height: 26px;
+        padding: 0 10px;
+        background-color: #f4f4f5;
+        color: #909399;
+        border-radius: 4px
+    }
+}
+
+.tools{
+    .clear-fix();
+    min-height: 50px;
+    .tools-search{
+        float: right;
+        width: 250px;
+    }
+    .tip{
+        font-size: 12px;
+        float: right;
+        margin-top: 2px;
+        height: 26px;
+        line-height: 26px;
+        padding: 0 10px;
+        background-color: #f4f4f5;
+        color: #909399;
+        border-radius: 4px
+    }
+    .search-box{
+        float: right;
+    }
+}
+
+a{
+    color: @color-primary;
+}
+
+.pay-desc{
+    border-top: 1px solid @color-divider;
+    padding: 10px 20px 0 20px;
+    line-height: 1.3em;
+    dt{
+        color: @color-title;
+        font-size: 14px;
+    }
+    dd{
+        // color: @color-content;
+        font-size: 12px;
+    }
+    .param{
+        color: #000;
+    }
+}
+
+.pay-wx-qr{
+    .clear-fix();
+    img{
+        float: left;
+        width: 120px;
+        height: 120px;
+        margin-right: 20px;
+    }
+    p{
+        line-height: 120px;
+    }
+}
